@@ -10,11 +10,7 @@ The FortiGate solution can be deployed using the Azure Portal or Azure Portal Wi
 
 Azure Portal Wizard:
 
-[![Deploy Azure Portal Wizard Button](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri//createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Fmovinalot%2Ffortinet-azure-solutions%2Factive-active-ilb-ilb-az%2FFortiGate%2FAvailabilityZones%2FActive-Active-ILB-ILB-AZ%2FcreateUiDefinition.json)
+[![Deploy Azure Portal Wizard Button](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmremini%2FAzure-FGT-AA-ILB-ILB%2Fmain%2Fazuredeplay.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Fmremini%2FAzure-FGT-AA-ILB-ILB%2Fmain%2FcreateUiDefinition.json)
 
 ## Diagram
 ![Globalenvironment](images/Global.jpg)
-
-## License
-
-[License](LICENSE) © Fortinet Technologies. All rights reserved.

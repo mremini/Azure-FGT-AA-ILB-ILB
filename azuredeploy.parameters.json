@@ -1,0 +1,100 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminUsername": {
+            "value": "azureadmin"
+        },
+        "adminPassword": {
+            "value": ""
+        },
+        "fortiGateNamePrefix": {
+            "value": "NCR"
+        },
+        "fortiGateImageSKU": {
+            "value": "fortinet_fg-vm"
+        },
+        "fortiGateImageVersion": {
+            "value": "latest"
+        },
+        "fortiGateAdditionalCustomData": {
+            "value": ""
+        },
+        "instanceType": {
+            "value": "Standard_F2s"
+        },
+        "availabilityOptions": {
+            "value": "Availability Set"
+        },
+        "acceleratedNetworking": {
+            "value": "false"
+        },
+        "vnetNewOrExisting": {
+            "value": "existing"
+        },
+        "vnetName": {
+            "value": "mre_az_hub1_useast"
+        },
+        "vnetResourceGroup": {
+            "value": "cloudteam_mremini"
+        },
+        "vnetAddressPrefix": {
+            "value": "10.60.0.0/16"
+        },
+        "subnet1Name": {
+            "value": "vdom1"
+        },
+        "subnet1Prefix": {
+            "value": "10.60.30.0/24"
+        },
+        "subnet1StartAddress": {
+            "value": "10.60.30.4"
+        },
+        "subnet2Name": {
+            "value": "vdom2"
+        },
+        "subnet2Prefix": {
+            "value": "10.60.31.0/24"
+        },
+        "subnet2StartAddress": {
+            "value": "10.60.31.4"
+        },
+        "spoke1name": {
+            "value": "SpokeVNET1"
+        },
+        "spoke1prefix": {
+            "value": "172.16.137.0/24"
+        },
+        "spoke2name": {
+            "value": "SpokeVNET2"
+        },
+        "spoke2prefix": {
+            "value": "172.16.138.0/24"
+        },
+        "fortiGateLicenseBYOLA": {
+            "value": ""
+        },
+        "fortiGateLicenseBYOLB": {
+            "value": ""
+        },
+        "enablevdom": {
+            "value": "yes"
+        },
+        "port1vdom": {
+            "value": "root"
+        },
+        "port2vdom": {
+            "value": "preprod"
+        },              
+        "location": {
+            "value": "[resourceGroup().location]"
+        },
+        "fortinetTags": {
+            "value": {
+                "publisher": "Fortinet",
+                "template": "Active-Active-ILB-ILB-AZORAS",
+                "provider": "6EB3B02F-50E5-4A3E-8CB8-2E129258AAAZORAS"
+            }
+        }
+    }
+}

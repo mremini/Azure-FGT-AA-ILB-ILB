@@ -360,7 +360,7 @@
                                 "toolTip": "Provide the IP address of the Spoke1 VNET.",
                                 "constraints": {
                                     "required": false,
-                                    "regex": "^([0-9]{1,3}\.){3}([0-9]{1,3}\/){1}[0-9]{1,3}$",
+                                    "regex": "^([0-9]{1,3}\\.){3}([0-9]{1,3}\/){1}[0-9]{1,3}$",
                                     "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
                                 },
                                 "visible": true
@@ -386,7 +386,7 @@
                                 "toolTip": "Provide the IP address of the Spoke2 VNET.",
                                 "constraints": {
                                     "required": false,
-                                    "regex": "^([0-9]{1,3}\.){3}([0-9]{1,3}\/){1}[0-9]{1,3}$",
+                                    "regex": "^([0-9]{1,3}\\.){3}([0-9]{1,3}\/){1}[0-9]{1,3}$",
                                     "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
                                 },
                                 "visible": true

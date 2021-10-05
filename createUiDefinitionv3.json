@@ -364,6 +364,32 @@
                                     "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
                                 },
                                 "visible": true
+                            },
+                            {
+                                "name": "spoke2virtualnetwork",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Spoke2 Name",
+                                "defaultValue": "",
+                                "toolTip": "Provide the name of the Spoke2 VNET. This will be the name of the route to spoke1 in the Gateway Subnet Route Table",
+                                "constraints": {
+                                    "required": false,
+                                    "regex": "^[A-Za-z0-9.]{1,64}$",
+                                    "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
+                                },
+                                "visible": true
+                            },
+                            {
+                                "name": "spoke2virtualnetworkcidr",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Spoke2 IP address",
+                                "defaultValue": "",
+                                "toolTip": "Provide the IP address of the Spoke2 VNET.",
+                                "constraints": {
+                                    "required": false,
+                                    "regex": "^[A-Za-z0-9.]{1,64}$",
+                                    "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
+                                },
+                                "visible": true
                             }
                         ]
                     },
@@ -589,6 +615,8 @@
             "subnet2StartAddress": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.startAddress]",
             "spoke1name": "[steps('networking').spokevnetsection.spoke1virtualnetwork]",
             "spoke1prefix": "[steps('networking').spokevnetsection.spoke1virtualnetworkcidr]",
+            "spoke2name": "[steps('networking').spokevnetsection.spoke2virtualnetwork]",
+            "spoke2prefix": "[steps('networking').spokevnetsection.spoke2virtualnetworkcidr]",
             "enablevdom": "[steps('advanced').vdom.enabled]",
             "port1vdom": "[steps('advanced').vdom.port1vdom]",
             "port2vdom": "[steps('advanced').vdom.port2vdom]",

@@ -385,7 +385,7 @@
                                 "type": "Microsoft.Common.TextBox",
                                 "label": "Spoke2 Name",
                                 "defaultValue": "",
-                                "toolTip": "Provide the name of the Spoke2 VNET. This will be the name of the route to spoke2 in the Gateway Subnet Route Table",
+                                "toolTip": "Provide the name of the Spoke2 VNET. This will be the name of the route to spoke1 in the Gateway Subnet Route Table",
                                 "constraints": {
                                     "required": false,
                                     "regex": "^[A-Za-z0-9.]{1,64}$",
@@ -407,7 +407,8 @@
                                 "visible": true
                             }
                         ]
-                    },                    
+                    },
+                
                     {
                         "name": "acceleratednetworksection",
                         "type": "Microsoft.Common.Section",

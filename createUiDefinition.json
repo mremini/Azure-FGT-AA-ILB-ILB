@@ -327,16 +327,16 @@
                         ]
                     },
                     {
-                        "name": "spoke1vnetsection",
+                        "name": "spokevnetsection",
                         "type": "Microsoft.Common.Section",
-                        "label": "Spoke1 VNET ",
+                        "label": "Spoke VNETs ",
                         "elements": [
                             {
-                                "name": "virtualnetworktext",
+                                "name": "spoke1vnettext",
                                 "type": "Microsoft.Common.TextBlock",
                                 "visible": true,
                                 "options": {
-                                    "text": "Please enter the name and the CIDR of the Spoke1 VNET. This will be added in the Gateway Subnet Route Table."
+                                    "text": "Please enter the name and the CIDR of the Spoke1 and Spoke2 VNET. This will be added in the Gateway Subnet Route Table."
                                 }
                             },
                             {
@@ -360,32 +360,17 @@
                                 "toolTip": "Provide the IP address of the Spoke1 VNET.",
                                 "constraints": {
                                     "required": false,
-                                    "regex": "^[A-Za-z0-9.]{1,64}$",
+                                    "regex": "^([0-9]{1,3}(.)){3}([0-9]{1,3}/){1}[0-9]{1,3}$",
                                     "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
                                 },
                                 "visible": true
-                            }
-                        ]
-                    },
-                    {
-                        "name": "spoke2vnetsection",
-                        "type": "Microsoft.Common.Section",
-                        "label": "Spoke2 VNET ",
-                        "elements": [
-                            {
-                                "name": "virtualnetworktext",
-                                "type": "Microsoft.Common.TextBlock",
-                                "visible": true,
-                                "options": {
-                                    "text": "Please enter the name and the CIDR of the Spoke2 VNET. This will be added in the Gateway Subnet Route Table."
-                                }
                             },
                             {
                                 "name": "spoke2virtualnetwork",
                                 "type": "Microsoft.Common.TextBox",
                                 "label": "Spoke2 Name",
                                 "defaultValue": "",
-                                "toolTip": "Provide the name of the Spoke2 VNET. This will be the name of the route to spoke2 in the Gateway Subnet Route Table",
+                                "toolTip": "Provide the name of the Spoke2 VNET. This will be the name of the route to spoke1 in the Gateway Subnet Route Table",
                                 "constraints": {
                                     "required": false,
                                     "regex": "^[A-Za-z0-9.]{1,64}$",
@@ -401,7 +386,7 @@
                                 "toolTip": "Provide the IP address of the Spoke2 VNET.",
                                 "constraints": {
                                     "required": false,
-                                    "regex": "^[A-Za-z0-9.]{1,64}$",
+                                    "regex": "^([0-9]{1,3}(.)){3}([0-9]{1,3}/){1}[0-9]{1,3}$",
                                     "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
                                 },
                                 "visible": true
@@ -478,7 +463,7 @@
                                 "type": "Microsoft.Common.TextBlock",
                                 "visible": true,
                                 "options": {
-                                    "text": "Enable VDOMs"
+                                    "text": "Enable VDOMs in FortiGate Bootstrap configuration"
                                 }
                             },
                             {
@@ -628,10 +613,10 @@
             "subnet2Name": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.name]",
             "subnet2Prefix": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.addressPrefix]",
             "subnet2StartAddress": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.startAddress]",
-            "spoke1name": "[steps('networking').spoke1vnetsection.spoke1virtualnetwork]",
-            "spoke1prefix": "[steps('networking').spoke1vnetsection.spoke1virtualnetworkcidr]",
-            "spoke2name": "[steps('networking').spoke2vnetsection.spoke2virtualnetwork]",
-            "spoke2prefix": "[steps('networking').spoke2vnetsection.spoke2virtualnetworkcidr]]",
+            "spoke1name": "[steps('networking').spokevnetsection.spoke1virtualnetwork]",
+            "spoke1prefix": "[steps('networking').spokevnetsection.spoke1virtualnetworkcidr]",
+            "spoke2name": "[steps('networking').spokevnetsection.spoke2virtualnetwork]",
+            "spoke2prefix": "[steps('networking').spokevnetsection.spoke2virtualnetworkcidr]",
             "enablevdom": "[steps('advanced').vdom.enabled]",
             "port1vdom": "[steps('advanced').vdom.port1vdom]",
             "port2vdom": "[steps('advanced').vdom.port2vdom]",

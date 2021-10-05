@@ -327,6 +327,47 @@
                         ]
                     },
                     {
+                        "name": "spoke1vnetsection",
+                        "type": "Microsoft.Common.Section",
+                        "label": "Spoke1 VNET ",
+                        "elements": [
+                            {
+                                "name": "spoke1vnettext",
+                                "type": "Microsoft.Common.TextBlock",
+                                "visible": true,
+                                "options": {
+                                    "text": "Please enter the name and the CIDR of the Spoke1 VNET. This will be added in the Gateway Subnet Route Table."
+                                }
+                            },
+                            {
+                                "name": "spoke1virtualnetwork",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Spoke1 Name",
+                                "defaultValue": "",
+                                "toolTip": "Provide the name of the Spoke1 VNET. This will be the name of the route to spoke1 in the Gateway Subnet Route Table",
+                                "constraints": {
+                                    "required": false,
+                                    "regex": "^[A-Za-z0-9.]{1,64}$",
+                                    "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
+                                },
+                                "visible": true
+                            },
+                            {
+                                "name": "spoke1virtualnetworkcidr",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Spoke1 IP address",
+                                "defaultValue": "",
+                                "toolTip": "Provide the IP address of the Spoke1 VNET.",
+                                "constraints": {
+                                    "required": false,
+                                    "regex": "^[A-Za-z0-9.]{1,64}$",
+                                    "validationMessage": "Only alphanumeric characters and dots are allowed, and the value must be 1 to 64 characters."
+                                },
+                                "visible": true
+                            }
+                        ]
+                    },
+                    {
                         "name": "acceleratednetworksection",
                         "type": "Microsoft.Common.Section",
                         "label": "Accelerated networking",
@@ -546,6 +587,8 @@
             "subnet2Name": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.name]",
             "subnet2Prefix": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.addressPrefix]",
             "subnet2StartAddress": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.startAddress]",
+            "spoke1name": "[steps('networking').spoke1vnetsection.spoke1virtualnetwork]",
+            "spoke1prefix": "[steps('networking').spoke1vnetsection.spoke1virtualnetworkcidr]",
             "enablevdom": "[steps('advanced').vdom.enabled]",
             "port1vdom": "[steps('advanced').vdom.port1vdom]",
             "port2vdom": "[steps('advanced').vdom.port2vdom]",

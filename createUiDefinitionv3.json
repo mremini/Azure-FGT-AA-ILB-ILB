@@ -368,9 +368,9 @@
                             {
                                 "name": "spoke2virtualnetwork",
                                 "type": "Microsoft.Common.TextBox",
-                                "label": "Spoke1 Name",
+                                "label": "Spoke2 Name",
                                 "defaultValue": "",
-                                "toolTip": "Provide the name of the Spoke1 VNET. This will be the name of the route to spoke1 in the Gateway Subnet Route Table",
+                                "toolTip": "Provide the name of the Spoke2 VNET. This will be the name of the route to spoke2 in the Gateway Subnet Route Table",
                                 "constraints": {
                                     "required": false,
                                     "regex": "^[A-Za-z0-9.]{1,64}$",
@@ -381,9 +381,9 @@
                             {
                                 "name": "spoke2virtualnetworkcidr",
                                 "type": "Microsoft.Common.TextBox",
-                                "label": "Spoke1 IP address",
+                                "label": "Spoke2 IP address",
                                 "defaultValue": "",
-                                "toolTip": "Provide the IP address of the Spoke1 VNET.",
+                                "toolTip": "Provide the IP address of the Spoke2 VNET.",
                                 "constraints": {
                                     "required": false,
                                     "regex": "^[A-Za-z0-9.]{1,64}$",

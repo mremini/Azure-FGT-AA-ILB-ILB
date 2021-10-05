@@ -310,64 +310,42 @@
 											"minAddressCount": 8,
 											"requireContiguousAddresses": true
 										}
+									},
+									"spoke1": {
+										"label": "SPOKE VNET 1",
+										"defaultValue": {
+											"name": "SpokeVNET1",
+											"addressPrefixSize": "/24"
+										},
+										"constraints": {
+											"minAddressPrefixSize": "/27",
+											"minAddressCount": 8,
+											"requireContiguousAddresses": true
+										}
+									},
+									"spoke2": {
+										"label": "SPOKE VNET 2",
+										"defaultValue": {
+											"name": "SpokeVNET2",
+											"addressPrefixSize": "/24"
+										},
+										"constraints": {
+											"minAddressPrefixSize": "/27",
+											"minAddressCount": 8,
+											"requireContiguousAddresses": true
+										}
 									}
 								},
 								"visible": true
 							},
-							{
-								"name": "spoke1virtualnetwork",
-								"type": "Microsoft.Network.VirtualNetworkCombo",
-								"label": {
-									"virtualNetwork": "Spoke1 Virtual network",
-									"subnets": "Subnets"
-								},
-								"toolTip": {
-									"virtualNetwork": "Spoke1 VNET",
-									"subnets": "Standard deployment is to have external and internal subnets."
-								},
-								"defaultValue": {
-									"name": "spoke1-vnet",
-									"addressPrefixSize": "/24"
-								},
-								"constraints": {
-									"minAddressPrefixSize": "/27"
-								},
-								"options": {
-									"hideExisting": false
-								},
-								"visible": true
-							},
-							{
-								"name": "spoke2virtualnetwork",
-								"type": "Microsoft.Network.VirtualNetworkCombo",
-								"label": {
-									"virtualNetwork": "Spoke2 Virtual network",
-									"subnets": "Subnets"
-								},
-								"toolTip": {
-									"virtualNetwork": "Spoke2VNET",
-									"subnets": "Standard deployment is to have external and internal subnets."
-								},
-								"defaultValue": {
-									"name": "spoke2-vnet",
-									"addressPrefixSize": "/24"
-								},
-								"constraints": {
-									"minAddressPrefixSize": "/27"
-								},
-								"options": {
-									"hideExisting": false
-								},
-								"visible": true
-							},							
 							{
 								"name": "virtualnetworkinfo",
 								"type": "Microsoft.Common.InfoBox",
 								"visible": true,
 								"options": {
 									"icon": "Info",
-									"text": "VDOM1 and VDOM2 Subnets are the subnets where FGT port1 and port2 will be created. Select the Spoke VNETs that will be configured in the GatewaySubnet Route Table",
-									"uri": "https://github.com/mremini/Azure-FGT-AA-ILB-ILB"
+									"text": "The internal subnet is a transit subnet containing only the FortiGate interfaces for traffic to and from the internal networks. Internal systems should be installed in a protected subnet with user defined route configuration.",
+									"uri": "https://github.com/fortinet/azure-templates/tree/main/FortiGate/Active-Active-ELB-ILB"
 								}
 							}
 						]
@@ -592,10 +570,10 @@
 			"subnet2Name": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.name]",
 			"subnet2Prefix": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.addressPrefix]",
 			"subnet2StartAddress": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.subnet2.startAddress]",
-			"spoke1name": "[steps('networking').virtualnetworksection.spoke1virtualnetwork.name]",
-			"spoke1prefix": "[steps('networking').virtualnetworksection.spoke1virtualnetwork.addressPrefix]",
-			"spoke2name": "[steps('networking').virtualnetworksection.spoke2virtualnetwork.name]",
-			"spoke2prefix": "[steps('networking').virtualnetworksection.spoke2virtualnetwork.addressPrefix]]",
+			"spoke1name": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.spoke1.name]",
+			"spoke1prefix": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.spoke1.addressPrefix]",
+			"spoke2name": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.spoke2.name]",
+			"spoke2prefix": "[steps('networking').virtualnetworksection.virtualnetwork.subnets.spoke2.addressPrefix]",
 			"enablevdom": "[steps('advanced').vdom.enabled]",
 			"port1vdom": "[steps('advanced').vdom.port1vdom]",
 			"port2vdom": "[steps('advanced').vdom.port2vdom]",

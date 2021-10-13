@@ -96,7 +96,7 @@
                 "type": "Microsoft.Common.DropDown",
                 "label": "FortiGate Image Version",
                 "defaultValue": "latest",
-                "toolTip": "Select the FortiGate image version",
+                "toolTip": "Select the FortiOS image version",
                 "constraints": {
                     "required": false,
                     "allowedValues": [

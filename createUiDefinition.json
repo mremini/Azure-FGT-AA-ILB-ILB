@@ -280,6 +280,9 @@
                                     "name": "FortiGate-VNET",
                                     "addressPrefixSize": "/22"
                                 },
+                                "constraints": {
+                                    "minAddressPrefixSize": "/29"
+                                },
                                 "options": {
                                     "hideExisting": false
                                 },

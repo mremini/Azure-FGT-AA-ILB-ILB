@@ -131,7 +131,15 @@
                         {
                             "label": "6.4.5",
                             "value": "6.4.5"
+                        },                        
+                        {
+                            "label": "6.4.7",
+                            "value": "6.4.7"
                         },
+                        {
+                            "label": "6.4.7",
+                            "value": "6.4.7"
+                        },                        
                         {
                             "label": "7.0.0",
                             "value": "7.0.0"
@@ -281,7 +289,7 @@
                                     "addressPrefixSize": "/22"
                                 },
                                 "constraints": {
-                                    "minAddressPrefixSize": "/24"
+                                    "minAddressPrefixSize": "/27"
                                 },
                                 "options": {
                                     "hideExisting": false
@@ -502,7 +510,7 @@
                                         },
                                         {
                                             "label": "PREPROD VDOM",
-                                            "value": "preprod"
+                                            "value": "lab"
                                         }
                                     ]
                                 },
@@ -512,7 +520,7 @@
                                 "name": "port2vdom",
                                 "type": "Microsoft.Common.DropDown",
                                 "label": "Port2 VDOM",
-                                "defaultValue": "preprod",
+                                "defaultValue": "lab",
                                 "toolTip": "port2 assigned VDOM",
                                 "constraints": {
                                     "required": true,
@@ -523,7 +531,7 @@
                                         },
                                         {
                                             "label": "PREPROD VDOM",
-                                            "value": "preprod"
+                                            "value": "lab"
                                         }
                                     ]
                                 },

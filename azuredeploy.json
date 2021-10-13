@@ -48,7 +48,7 @@
         "latest"
       ],
       "metadata": {
-        "description": "Select the FortiGate image version"
+        "description": "Select FOrtiOS image version"
       }
     },
     "fortiGateAdditionalCustomData": {
